@@ -22,7 +22,7 @@ function App() {
               <h1 className="display-5 fw-bold mb-0">OctoFit Tracker</h1>
             </div>
             <p className="lead mb-0">
-              Track activities, teams, workouts, and rankings with a clean dashboard view.
+              Track activities!!!, teams, workouts, and rankings with a clean dashboard view.
             </p>
           </div>
         </header>
