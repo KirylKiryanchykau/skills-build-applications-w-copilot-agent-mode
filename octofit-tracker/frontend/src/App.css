@@ -1,0 +1,174 @@
+:root {
+  --app-bg: radial-gradient(circle at 8% 12%, #e8fff8 0%, transparent 35%),
+    radial-gradient(circle at 88% 18%, #fff1e1 0%, transparent 34%),
+    linear-gradient(150deg, #f6fcff 0%, #eef7ff 48%, #f3faf6 100%);
+  --app-card: #ffffff;
+  --app-text: #143a52;
+  --app-muted: #3f6178;
+  --app-accent: #ff6b35;
+  --app-accent-soft: rgba(255, 107, 53, 0.14);
+  --app-accent-strong: #e85a2a;
+  --app-link: #007e7a;
+  --app-link-hover: #025f6f;
+  --app-table-head: #113955;
+  --app-table-row: #f6fbff;
+  --app-nav-bg: linear-gradient(120deg, #0f4c81 0%, #156da8 100%);
+  --app-nav-link: #dff2ff;
+}
+
+body {
+  color: var(--app-text);
+  background: var(--app-bg);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-hero {
+  background: radial-gradient(circle at top right, rgba(255, 107, 53, 0.2), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(0, 126, 122, 0.12), transparent 45%), var(--app-card);
+  border: 1px solid rgba(20, 58, 82, 0.1);
+}
+
+.app-hero .lead {
+  color: var(--app-muted);
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.hero-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(20, 58, 82, 0.25));
+}
+
+.app-hero h1 {
+  color: #0f4c81;
+}
+
+.app-nav {
+  background: var(--app-nav-bg);
+  border: 1px solid rgba(15, 76, 129, 0.25);
+  box-shadow: 0 10px 26px rgba(15, 76, 129, 0.22);
+}
+
+.app-brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ffffff;
+}
+
+.nav-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.25));
+}
+
+.app-nav .navbar-brand {
+  color: #ffffff;
+}
+
+.app-nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  color: var(--app-nav-link);
+  border: 1px solid transparent;
+}
+
+.app-nav .nav-link:hover {
+  background: rgba(223, 242, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(223, 242, 255, 0.35);
+}
+
+.app-nav .nav-link.active {
+  background: var(--app-accent);
+  color: #fff;
+}
+
+.dashboard-card {
+  border: 1px solid rgba(20, 58, 82, 0.12);
+  box-shadow: 0 12px 30px rgba(20, 58, 82, 0.12);
+}
+
+h2,
+h3,
+h4,
+h5 {
+  color: #0f4c81;
+}
+
+.table thead th {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--app-table-head);
+}
+
+.table tbody tr:nth-child(odd) {
+  background: var(--app-table-row);
+}
+
+.table-hover > tbody > tr:hover > * {
+  background-color: #ffe4d9;
+}
+
+.card-title-link {
+  color: var(--app-link);
+  text-decoration: none;
+}
+
+.card-title-link:hover {
+  text-decoration: underline;
+  color: var(--app-link-hover);
+}
+
+a {
+  color: var(--app-link);
+}
+
+a:hover {
+  color: var(--app-link-hover);
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+  background-color: var(--app-accent);
+  border-color: var(--app-accent);
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  background-color: var(--app-accent-strong);
+  border-color: var(--app-accent-strong);
+}
+
+.btn-outline-primary {
+  color: var(--app-accent);
+  border-color: var(--app-accent);
+}
+
+.btn-outline-secondary {
+  color: #0f4c81;
+  border-color: #0f4c81;
+}
+
+@media (max-width: 576px) {
+  .hero-brand {
+    align-items: flex-start;
+  }
+
+  .hero-logo {
+    width: 44px;
+    height: 44px;
+  }
+}
