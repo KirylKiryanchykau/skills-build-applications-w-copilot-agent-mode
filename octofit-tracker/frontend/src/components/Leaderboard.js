@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import EntityTableView from './EntityTableView';
-import { buildApiEndpoint } from '../utils/api';
 
 function Leaderboard() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const endpoint = buildApiEndpoint('leaderboard');
+  const codespaceName = process.env.REACT_APP_CODESPACE_NAME;
+  const endpoint = codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/leaderboard/`
+    : 'http://localhost:8000/api/leaderboard/';
 
   useEffect(() => {
     async function fetchLeaderboard() {

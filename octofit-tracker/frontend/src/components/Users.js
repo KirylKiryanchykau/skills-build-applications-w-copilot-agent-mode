@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import EntityTableView from './EntityTableView';
-import { buildApiEndpoint } from '../utils/api';
 
 function Users() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const endpoint = buildApiEndpoint('users');
+  const codespaceName = process.env.REACT_APP_CODESPACE_NAME;
+  const endpoint = codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/users/`
+    : 'http://localhost:8000/api/users/';
 
   useEffect(() => {
     async function fetchUsers() {
